@@ -10,6 +10,10 @@ import { AuthModule } from './auth/auth.module';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 
 
 @NgModule({
@@ -18,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule,
     AuthModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -26,7 +29,12 @@ import { HttpClientModule } from '@angular/common/http';
     AuthModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {}),
+    StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({
+      name: 'Ngrx search Engine',
+    }),
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
