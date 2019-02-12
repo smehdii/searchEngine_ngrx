@@ -15,7 +15,7 @@ export class AuthService {
             return throwError('Invalid username or password');
         }
 
-        return of({ name: 'User' });
+        return of({ name: 'Viirtual' });
     }
 
     logout() {
