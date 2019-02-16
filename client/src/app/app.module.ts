@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { BooksModule } from './books/books.module';
 
 
 
@@ -35,6 +36,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       name: 'Ngrx search Engine',
     }),
     CoreModule,
+    BooksModule
   ],
   providers: [],
   bootstrap: [AppComponent]
